@@ -72,7 +72,13 @@ suite('Functional Tests', function () {
 
 const Browser = require('zombie');
 
+Browser.site = "https://github.com/FoxAllUp/boilerplate-mochachai.git";
+
 suite('Functional Tests with Zombie.js', function () {
+  const browser = new Browser();
+  suiteSetup(function(done) {
+  return browser.visit('/', done);
+});
   this.timeout(5000);
 
 
@@ -86,6 +92,7 @@ suite('Functional Tests with Zombie.js', function () {
   suite('"Famous Italian Explorers" form', function () {
     // #5
     test('Submit the surname "Colombo" in the HTML form', function (done) {
+      
       assert.fail();
 
       done();
