@@ -54,7 +54,7 @@ suite('Functional Tests', function () {
     test('Send {surname: "da Verrazzano"}', function (done) {
       chai
         .request(server)
-        .keepOpen
+        .keepOpen()
         .put('/travellers')
         .send({
           "surname" : "da Verrazzano"
