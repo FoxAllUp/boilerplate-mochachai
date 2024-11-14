@@ -90,9 +90,10 @@ suite('Functional Tests with Zombie.js', function () {
   suite('"Famous Italian Explorers" form', function () {
     // #5
     test('Submit the surname "Colombo" in the HTML form', function (done) {
-      
-      assert.fail();
-
+      browser.assert.success();
+      browser.assert.text('span#name', 'Cristoforo');
+      browser.assert.text('span#surname', 'Colombo');
+      browser.assert.element('span#dates', 1);
       done();
     });
     // #6
